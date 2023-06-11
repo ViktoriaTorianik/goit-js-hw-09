@@ -2,8 +2,6 @@ const startButton = document.querySelector("[data-start]")
 const stopButton = document.querySelector("[data-stop]")
 const colorBody = document.querySelector("body")
 
-stopButton.setAttribute("disabled", "disabled")
-
 startButton.addEventListener('click', onStart)
 
 function onStart(){
@@ -14,7 +12,6 @@ function onStart(){
         return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
       } },1000)
       startButton.setAttribute("disabled", "disabled")
-      stopButton.removeAttribute('disabled')
     }
 
 stopButton.addEventListener('click', onStop)
@@ -22,7 +19,6 @@ function onStop(){
     
     clearInterval(timerId)
     startButton.removeAttribute("disabled")
-    stopButton.setAttribute("disabled", "disabled")
 }
 
 
