@@ -12,4 +12,3 @@ formEl.addEventListener('submit', onSubmit)
 function onSubmit(){
 
 }
-console.log("vvv");
