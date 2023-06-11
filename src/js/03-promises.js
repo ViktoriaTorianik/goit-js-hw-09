@@ -8,8 +8,8 @@ function createPromise(position, delay) {
 }
 const formEl = document.querySelector(".form")
 console.log(formEl);
-formEl.addEventListener('submit', onSubmit)
-function onSubmit(){
+// formEl.addEventListener('submit', onSubmit)
+// function onSubmit(){
 
-}
+// }
 console.log('vvvv');
