@@ -12,7 +12,7 @@ const seconds = document.querySelector('span[data-seconds]')
 const divTimer = document.querySelector("div")
 console.log(divTimer);
 
-// divTimer.style.display = "flex"
+divTimer.style.display = "flex"
 // days.style.border = "2px solid red"
 
 
@@ -22,6 +22,7 @@ console.log(divTimer);
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
+      console.log('123')
         if(selectedDates[0]<new Date()){
             window.alert("Please choose a date in the future")
         } else {
@@ -71,3 +72,4 @@ console.log(divTimer);
   console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
   console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
   console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+ 

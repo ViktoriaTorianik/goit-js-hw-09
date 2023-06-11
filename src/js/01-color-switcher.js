@@ -13,18 +13,19 @@ function onStart(){
     function getRandomHexColor() {
         return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
       } },1000)
-      startButton.setAttribute('disabled','true')
-      stopButton.removeAttribute ('disable')
+      startButton.setAttribute('disabled', '')
+      stopButton.removeAttribute('disabled')
     }
 
 stopButton.addEventListener('click', onStop)
 function onStop(){
+    
     clearInterval(timerId)
-    startButton.removeAttribute ('disable')
-    stopButton.setAttribute('disabled','true')
+    startButton.removeAttribute('disabled')
+    stopButton.setAttribute('disabled', '')
 }
 
-console.log(startButton);
+
     
 
 
