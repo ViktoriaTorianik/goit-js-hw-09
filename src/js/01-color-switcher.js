@@ -4,20 +4,22 @@ const colorBody = document.querySelector("body")
 
 stopButton.setAttribute("disabled", "")
 
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+  }
+
 startButton.addEventListener('click', onStart)
 
 function onStart(){
     
-    timerId = setInterval(()=> {
+    
         startButton.setAttribute("disabled", "")
         stopButton.removeAttribute("disabled")
-        colorBody.style.backgroundColor = getRandomHexColor()
-    function getRandomHexColor() {
-        return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
-      } },1000)
-      
-    }
-
+        timerId = setInterval(()=>{
+            colorBody.style.backgroundColor = getRandomHexColor()
+        }, 1000)
+        
+}
 stopButton.addEventListener('click', onStop)
 function onStop(){
     
