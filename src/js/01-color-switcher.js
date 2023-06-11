@@ -13,7 +13,7 @@ function onStart(){
     function getRandomHexColor() {
         return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
       } },1000)
-      startButton.setAttribute('disabled', '')
+      startButton.setAttribute('disabled', "")
       stopButton.removeAttribute('disabled')
     }
 
@@ -22,7 +22,7 @@ function onStop(){
     
     clearInterval(timerId)
     startButton.removeAttribute('disabled')
-    stopButton.setAttribute('disabled', '')
+    stopButton.setAttribute('disabled', "")
 }
 
 
