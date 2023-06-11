@@ -13,8 +13,6 @@ const divTimer = document.querySelector("div")
 console.log(divTimer);
 
 divTimer.style.display = "flex"
-// days.style.border = "2px solid red"
-
 
  flatpickr(inputEl, {
     enableTime: true,
