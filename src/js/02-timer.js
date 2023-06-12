@@ -5,10 +5,10 @@ import "flatpickr/dist/flatpickr.min.css";
 
 const inputEl = document.querySelector("#datetime-picker")
 const btn = document.querySelector("button")
-const day = document.querySelector('span[data-days]')
-const hour = document.querySelector('span[data-hours]')
-const minute = document.querySelector('span[data-minutes]')
-const second = document.querySelector('span[data-seconds]')
+const dayEl = document.querySelector('span[data-days]')
+const hourEl = document.querySelector('span[data-hours]')
+const minuteEl = document.querySelector('span[data-minutes]')
+const secondEl = document.querySelector('span[data-seconds]')
 const divTimer = document.querySelector("div")
 console.log(divTimer);
 
@@ -63,10 +63,10 @@ let timerId = null;
     if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
       clearTimeout(timerId); }
 
-    day.textContent = "days";
-    hour.textContent = "hours";
-    minute.textContent = "minutes";
-    second.textContent = "seconds";
+    dayEl.textContent = days;
+    hourEl.textContent = hours;
+    minuteEl.textContent = minutes;
+    secondEl.textContent = seconds;
     return { days, hours, minutes, seconds };
   }
  
