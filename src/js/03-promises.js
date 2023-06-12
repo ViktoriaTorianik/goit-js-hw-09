@@ -8,14 +8,16 @@ function onSubmitForm(e) {
   let delay = Number(e.currentTarget.delay.value);
   let step = Number(e.currentTarget.step.value);
   let amount = Number(e.currentTarget.amount.value);
+  let position = 0;
   for (let i = 0; i < amount; i +=1) {
-    createPromise(i, delay)
-    .then(({i,delay})=> {
+    position +=1
+    createPromise(position, delay)
+    .then(({position,delay})=> {
     setTimeout(()=> {
-      Notiflix.Notify.success("`✅ Fulfilled promise ${position} in ${delay}ms`");},delay);})
-    .catch(({i,delay})=> {
+      Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);},delay);})
+    .catch(({position,delay})=> {
     setTimeout(()=>{
-      Notiflix.Notify.failure("`❌ Rejected promise ${position} in ${delay}ms`");},delay);});
+      Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);},delay);});
       delay += step
     
   }}

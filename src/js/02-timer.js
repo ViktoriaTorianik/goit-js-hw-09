@@ -20,14 +20,13 @@ divTimer.style.display = "flex"
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-      console.log('123')
         if(selectedDates[0]<new Date()){
             window.alert("Please choose a date in the future")
         } else {
             btn.disabled = false
             btn.addEventListener('click', onStartTime)
   function onStartTime(){
-  setInterval(()=>{
+ const timerId = setInterval(()=>{
     const currentTime = new Date
     const deltaTime = selectedDates[0] - currentTime 
     const finishTime = convertMs(deltaTime)
@@ -38,6 +37,9 @@ divTimer.style.display = "flex"
     seconds.textContent = addLeadingZero(finishTime.seconds);
     
   },1000)
+  if(selectedDates[0] <= 0){
+    clearInterval(timerId)
+  }
   }
         }
       console.log(selectedDates[0]);
