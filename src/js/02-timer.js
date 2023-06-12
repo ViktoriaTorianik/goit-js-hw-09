@@ -26,7 +26,7 @@ const options = {
           window.alert("Please choose a date in the future")
       } else {
           btn.disabled = false}
-      }}
+      }};
 
 const flatpickrEl = flatpickr(inputEl, options);
 let timerId = null;
@@ -35,7 +35,7 @@ let timerId = null;
     const currentTime = new Date();
     const deltaTime = flatpickrEl.selectedDates[0].getTime() - currentTime.getTime(); 
     convertMs(deltaTime); 
-    
+   console.log("123");
   },1000);
  
   })
@@ -61,13 +61,13 @@ let timerId = null;
     const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
     
     if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
-      clearTimeout(timerId); 
+      clearTimeout(timerId); }
 
-    day.textContent = days;
-    hour.textContent = hours;
-    minute.textContent = minutes;
-    second.textContent = seconds;
+    day.textContent = "days";
+    hour.textContent = "hours";
+    minute.textContent = "minutes";
+    second.textContent = "seconds";
     return { days, hours, minutes, seconds };
   }
  
-} 
+
