@@ -30,19 +30,18 @@ const options = {
 
 const flatpickrEl = flatpickr(inputEl, options);
 let timerId = null;
- btn.addEventListener('click', onStartTime)
-  function onStartTime(){
+ btn.addEventListener('click',()=>{
  timerId = setInterval(()=>{
-    const currentTime = new Date
-    const deltaTime = flatpickrEl.selectedDates[0].getTime() - currentTime.getTime() 
+    const currentTime = new Date();
+    const deltaTime = flatpickrEl.selectedDates[0].getTime() - currentTime.getTime(); 
     convertMs(deltaTime); 
     
   },1000);
  
-  }
+  })
 
   function convertMs(ms) {
-    
+
     function addLeadingZero(value) {
       return `${value}`.padStart(2, '0');
     }
@@ -72,4 +71,3 @@ let timerId = null;
   }
  
 } 
- 
